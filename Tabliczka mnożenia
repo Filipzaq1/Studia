@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main() {
+	
+	int x, y, wymiar;
+	cout<<"Podaj rozmiar tabliczki mnozenia: ";
+	cin>> wymiar;
+	int table [wymiar+1][wymiar+1];
+	
+	//pierwszy rząd 
+	for(int j=0; j<=wymiar; j++){
+			table[0][j]=j;
+		}
+	//kolejne rzędy	
+	for(int i=1; i<=wymiar; i++){
+		//pierwsza kolumna
+		for(int j=0;j<=wymiar; j++){
+			table[i][0]=i;	
+		}
+		//kolejne kolumny
+		for(int j=1; j<=wymiar; j++){
+			table[i][j]=i*j;
+		}
+	}
+	//wyświetl
+	for(int i=0; i<=wymiar; i++){
+		for(int j=0; j<=wymiar; j++){
+			cout<< table[i][j] <<"\t";
+		}
+		cout<<"\n";
+	}
+	return 0;
+}
